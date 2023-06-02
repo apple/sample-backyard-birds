@@ -1,0 +1,252 @@
+{
+  "identifier" : "DD874EC3",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "D771AF0A",
+      "localizations" : [
+        {
+          "description" : "A nutritious snack that any bird loves.",
+          "displayName" : "Nutritional Pellet",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "pellet.single",
+      "referenceName" : "Nutrition Pellet",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "A1B032D7",
+      "localizations" : [
+        {
+          "description" : "Plenty of pellets for bird visitors.",
+          "displayName" : "Box of Nutrition Pellets",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "pellet.box",
+      "referenceName" : "Nutrition Pellet Box",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "FB789A80",
+      "localizations" : [
+        {
+          "description" : "An acorn for birds to eat.",
+          "displayName" : "Golden Acorn",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "acorns.individual",
+      "referenceName" : "Golden Acorn",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "2D888232",
+      "localizations" : [
+        {
+          "description" : "Acorns for birds to eat.",
+          "displayName" : "Pile of Golden Acorns",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "acorns.collection",
+      "referenceName" : "Golden Acorn Pile",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "A775D48F",
+      "localizations" : [
+        {
+          "description" : "A sweet nectar that attracts birds.",
+          "displayName" : "Cup of Nectar",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "nectar.cup",
+      "referenceName" : "Nectar Cup",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "9B2224A8",
+      "localizations" : [
+        {
+          "description" : "A whole bottle of sweet nectar.",
+          "displayName" : "Bottle of Nectar",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "nectar.bottle",
+      "referenceName" : "Nectar Bottle",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "6F3A93AB",
+      "localizations" : [
+
+      ],
+      "name" : "Backyard Birds Pass",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 3,
+          "internalID" : "BAE8E446",
+          "introductoryOffer" : {
+            "internalID" : "D2893B86",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "Unlimited backyards and more decorations",
+              "displayName" : "Individual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pass.individual",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Individual",
+          "subscriptionGroupID" : "6F3A93AB",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "7.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "D4E97EB7",
+          "introductoryOffer" : {
+            "internalID" : "60AC84AA",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "Share your pass with up to 6 accounts",
+              "displayName" : "Family",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pass.family",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Family",
+          "subscriptionGroupID" : "6F3A93AB",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "11.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "FA56FAE2",
+          "introductoryOffer" : {
+            "internalID" : "0A2A29EE",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "The full backyard experience",
+              "displayName" : "Premium",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pass.premium",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Premium",
+          "subscriptionGroupID" : "6F3A93AB",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
