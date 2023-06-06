@@ -6,7 +6,7 @@ Create an app with persistent data, interactive widgets, and an all new in-app p
 
 Backyard Birds offers a rich environment in which you can watch the birds that visit your backyard garden. 
 You can monitor their water and food supply to ensure they always have fresh water and plenty to eat, 
-or upgrade the game using in-app purchase to provide tastier food for the birds to eat.
+or upgrade the game using an in-app purchase to provide tastier food for the birds to eat.
 
  The sample implements its data model using [SwiftData](https://developer.apple.com/documentation/swiftdata) 
  for persistence, and integrates seamlessly with SwiftUI using the [`Observable`](https://developer.apple.com/documentation/observation) protocol. 
@@ -16,25 +16,25 @@ or upgrade the game using in-app purchase to provide tastier food for the birds 
 You can access the source code for this sample
 on [GitHub](https://github.com/apple/sample-backyard-birds).
 
-- Note: This sample code project is associated with WWDC23 session
-[102: State of the Union](https://developer.apple.com/wwdc23/102/).
+- Note: This sample code project is associated with WWDC23 session 102:
+[State of the Union](https://developer.apple.com/wwdc23/102/).
 
 ## Configure the sample code project
 
 To configure the Backyard Birds app to run on your devices, follow these steps:
 
 1. Open the project in Xcode 15 or later.
-2. Edit the multiplatform taraget's scheme, and on the Options tab, choose the `Store.storekit` file for StoreKit configuration.
+2. Edit the multiplatform target's scheme, and on the Options tab, choose the `Store.storekit` file for StoreKit configuration.
 3. Repeat the previous step for the watchOS target's scheme.
 4. Select the top-level Backyard Birds project.
-5. For all targets, choose your team from the Team menu in the Signing & Capabilities pane, so Xcode can automatically manage your provisioning profile.
+5. For all targets, choose your team from the Team menu in the Signing & Capabilities pane so Xcode can automatically manage your provisioning profile.
 
-## Create a data driven app
+## Create a data-driven app
 
 The app defines its data model by conforming the model objects to [`PersistentModel`](https://developer.apple.com/documentation/swiftdata/persistentmodel) 
-by using the [`Model`](https://developer.apple.com/documentation/swiftdata/model) macro. 
+using the [`Model`](https://developer.apple.com/documentation/swiftdata/model) macro. 
 Using the [`Attribute`](https://developer.apple.com/documentation/swiftdata/attribute(_:renamingidentifier:hashmodifier:)) macro 
-with the [`unique`](https://developer.apple.com/documentation/swiftdata/propertyoptions/4128505-unique) 
+with the [`unique`](https://developer.apple.com/documentation/swiftdata/propertyoptions/unique) 
 option ensures that the `id` property is unique.
 
 ``` swift
@@ -62,9 +62,9 @@ option ensures that the `id` property is unique.
 ## Construct interactive widgets
 
 Backyard Birds displays interactive widgets by presenting a ``Button`` to refill a backyard's supplies 
-when the water and food are running low. The app does this by placing a ``Button`` in the widget's view, 
+when the water and food are running low. The app does this by placing a `Button` in the widget's view, 
 and passing a `ResupplyBackyardIntent` instance to the
- [`init(intent:label:)`](https://developer.apple.com/documentation/swiftui/button/init(intent:label:)) initializer.
+ [`init(intent:label:)`](https://developer.apple.com/documentation/swiftui/button/init(intent:label:)) initializer:
 
 ``` swift
 Button(intent: ResupplyBackyardIntent(backyard: BackyardEntity(from: snapshot.backyard))) {
@@ -79,7 +79,7 @@ Button(intent: ResupplyBackyardIntent(backyard: BackyardEntity(from: snapshot.ba
 
 The app allows for configuration of the widget by implementing the 
  [`WidgetConfigurationIntent`](https://developer.apple.com/documentation/appintents/widgetconfigurationintent)
-  protocol.
+  protocol:
 
 ``` swift
 struct BackyardWidgetIntent: WidgetConfigurationIntent {
@@ -117,10 +117,9 @@ struct BackyardWidgetIntent: WidgetConfigurationIntent {
 
 ## Provide a new in-app purchase experience
 
-Displaying several different bird food upgrades available for purchase on a store shelf is made possible 
-with [`ProductView`](https://developer.apple.com/documentation/storekit/productview). 
+The sample app uses [`ProductView`](https://developer.apple.com/documentation/storekit/productview) to display several different bird food upgrades available for purchase on a store shelf. 
 To prominently feature an in-app purchase item, the app uses the
- [`.productViewStyle(.large)`](https://developer.apple.com/documentation/storekit/productview/4202371-productviewstyle) modifier.
+ [`.productViewStyle(.large)`](https://developer.apple.com/documentation/storekit/productview/4202371-productviewstyle) modifier:
 
 ``` swift
 ProductView(id: product.id) {
@@ -134,7 +133,7 @@ ProductView(id: product.id) {
 
 The Backyard Birds Pass page displays renewable subscriptions using the
  [`SubscriptionStoreView`](https://developer.apple.com/documentation/storekit/subscriptionstoreview) view. 
- The app uses the `PassMarketingContent` view as the content of the `SubscriptionStoreView`.
+ The app uses the `PassMarketingContent` view as the content of the `SubscriptionStoreView`:
 
 ``` swift
 SubscriptionStoreView(
