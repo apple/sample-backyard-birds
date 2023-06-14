@@ -18,8 +18,8 @@ private let logger = Logger(subsystem: "Backyard Birds Data", category: "Plant")
     public var backyard: Backyard?
     public var variant: Int
     
-    @Transient public var speciesName: String { species.info.name }
-    @Transient public var speciesSummary: String { species.info.summary }
+    public var speciesName: String { species.info.name }
+    public var speciesSummary: String { species.info.summary }
     
     public init(id: UUID = UUID(), variant: Int) {
         self.id = id.uuidString

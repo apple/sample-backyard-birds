@@ -19,7 +19,7 @@ private let logger = Logger(subsystem: "BackyardBirdsData", category: "DataGener
     
     @Transient public var includeEarlyAccessSpecies: Bool = false
     
-    @Transient public var requiresInitialDataGeneration: Bool {
+    public var requiresInitialDataGeneration: Bool {
         initializationDate == nil
     }
     

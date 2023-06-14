@@ -24,10 +24,10 @@ import SwiftUI
     /// The preferred time of day, when shown in the UI.
     public var backgroundTimeInterval: Double
     
-    @Transient public var speciesName: String { species.info.name }
-    @Transient public var speciesSummary: String { species.info.summary }
+    public var speciesName: String { species.info.name }
+    public var speciesSummary: String { species.info.summary }
     
-    @Transient public var visitStatus: BirdVisitStatus {
+    public var visitStatus: BirdVisitStatus {
         if let lastKnownVisit {
             .recently(lastKnownVisit)
         } else {

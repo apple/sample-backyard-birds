@@ -18,7 +18,6 @@ import SwiftData
     @Relationship(.cascade, inverse: \Bird.species)
     public var birds: [Bird]
     
-    @Transient
     public var info: BirdSpeciesInfo { BirdSpeciesInfo(rawValue: id) }
     
     public init(info: BirdSpeciesInfo, naturalScale: Double = 1, isEarlyAccess: Bool = false, parts: [BirdPart]) {

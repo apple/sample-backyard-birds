@@ -15,7 +15,6 @@ import SwiftData
     @Relationship(.cascade, inverse: \Plant.species)
     public var plants: [Plant]
     
-    @Transient
     public var info: PlantSpeciesInfo {
         PlantSpeciesInfo(rawValue: id)
     }

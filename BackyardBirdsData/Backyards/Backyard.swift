@@ -34,28 +34,27 @@ import SwiftData
     public var leadingForegroundPlantVariant: Int = 0
     public var trailingForegroundPlantVariant: Int = 0
     
-    @Transient public var currentVisitorEvent: BackyardVisitorEvent? {
+    public var currentVisitorEvent: BackyardVisitorEvent? {
         guard let event = visitorEvents.first(where: { $0.dateRange.contains(.now) }) else {
             return nil
         }
         return event
     }
     
-    @Transient public var hasVisitor: Bool {
+    public var hasVisitor: Bool {
         currentVisitorEvent != nil
     }
     
-    @Transient public var needsToPresentVisitor: Bool {
+    public var needsToPresentVisitor: Bool {
         hasVisitor && !presentingVisitor
     }
     
-    @Transient public var historicalEvents: [BackyardVisitorEvent] {
+    public var historicalEvents: [BackyardVisitorEvent] {
         visitorEvents
             .filter { $0.endDate < .now }
             .sorted(using: KeyPathComparator(\.endDate, order: .reverse))
     }
     
-    @Transient
     public var colorData: BackyardTimeOfDayColorData {
         BackyardTimeOfDayColorData.colorData(timeInterval: timeIntervalOffset - creationDate.timeIntervalSinceNow)
     }

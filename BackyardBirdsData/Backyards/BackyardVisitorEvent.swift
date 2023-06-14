@@ -17,7 +17,7 @@ import SwiftData
     public var endDate: Date
     public var duration: TimeInterval
     
-    @Transient public var dateRange: Range<Date> {
+    public var dateRange: Range<Date> {
         startDate ..< endDate
     }
     

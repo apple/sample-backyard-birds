@@ -24,13 +24,12 @@ private let logger = Logger(subsystem: "Backyard Birds Data", category: "BirdFoo
     public var ownedQuantity: Int
     /// Track the StoreKit transactions that  have finished for this product
     /// to avoid repeatedly granting content for one transaction.
-//    public var finishedTransactions: [UInt64]
         
-    @Transient public var isPremium: Bool {
+    public var isPremium: Bool {
         !products.isEmpty
     }
     
-    @Transient public var orderedProducts: [Product] {
+    public var orderedProducts: [Product] {
         products.sorted { lhs, rhs in
             lhs.quantity < rhs.quantity
         }
