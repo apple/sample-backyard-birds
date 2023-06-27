@@ -21,7 +21,7 @@ extension EnvironmentValues {
 #if os(iOS)
 extension PrefersTabNavigationEnvironmentKey: UITraitBridgedEnvironmentKey {
     static func read(from traitCollection: UITraitCollection) -> Bool {
-        return traitCollection.userInterfaceIdiom == .phone || traitCollection.userInterfaceIdiom == .tv
+        return traitCollection.userInterfaceIdiom == .tv ||  traitCollection.horizontalSizeClass == .compact
     }
     
     static func write(to mutableTraits: inout UIMutableTraits, value: Bool) {
