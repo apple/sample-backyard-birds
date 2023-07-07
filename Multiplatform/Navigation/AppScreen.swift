@@ -6,6 +6,7 @@ An enum that defines the label of the active screen.
 */
 
 import SwiftUI
+import BackyardBirdsUI
 import BackyardBirdsData
 
 enum AppScreen: Codable, Hashable, Identifiable, CaseIterable {
@@ -22,7 +23,11 @@ extension AppScreen {
     var label: some View {
         switch self {
         case .backyards:
-            Label("Backyards", image: .fountain)
+            Label {
+                Text("Backyards")
+            } icon: {
+                Image.fountain
+            }
         case .birds:
             Label("Birds", systemImage: "bird")
         case .plants:
