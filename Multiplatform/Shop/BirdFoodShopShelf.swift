@@ -45,7 +45,7 @@ struct BirdFoodShopShelf<Content: View>: View {
 }
 
 private struct MyPreview: View {
-    @Query(filter: #Predicate { $0.id == "Nutrition Pellet" })
+    @Query(filter: #Predicate<BirdFood> { $0.id == "Nutrition Pellet" })
     private var birdFood: [BirdFood]
 
     var body: some View {

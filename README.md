@@ -40,11 +40,11 @@ option ensures that the `id` property is unique.
 ``` swift
 @Model public class BirdSpecies {
     @Attribute(.unique) public var id: String
-    public var naturalScale: Double = 1
+    public var naturalScale: Double
     public var isEarlyAccess: Bool
     public var parts: [BirdPart]
     
-    @Relationship(.cascade, inverse: \Bird.species)
+    @Relationship(deleteRule: .cascade, inverse: \Bird.species)
     public var birds: [Bird]
     
     public var info: BirdSpeciesInfo { BirdSpeciesInfo(rawValue: id) }

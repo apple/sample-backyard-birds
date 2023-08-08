@@ -14,7 +14,7 @@ import BackyardBirdsUI
 struct BirdFoodPickerSheet: View {
     var backyard: Backyard
     
-    @Query(sort: [.init(\.priority, order: .reverse), .init(\.name, comparator: .localizedStandard)])
+    @Query(sort: [.init(\BirdFood.priority, order: .reverse), .init(\BirdFood.name, comparator: .localizedStandard)])
     private var birdFood: [BirdFood]
     
     @Environment(\.dismiss) private var dismiss

@@ -15,9 +15,9 @@ import SwiftData
     public var waterRefillDate: Date
     public var foodRefillDate: Date
     public var creationDate: Date
-    public var presentingVisitor: Bool = false
-    public var isFavorite: Bool = false
-    public var timeIntervalOffset: TimeInterval = TimeInterval(hours: 12)
+    public var presentingVisitor: Bool
+    public var isFavorite: Bool
+    public var timeIntervalOffset: TimeInterval
     public var birdFood: BirdFood
     public var visitorEvents: [BackyardVisitorEvent]
     
@@ -27,12 +27,12 @@ import SwiftData
     @Relationship(inverse: \Plant.backyard)
     public var trailingPlants: [Plant]
     
-    public var floorVariant: Int = 0
-    public var fountainVariant: Int = 0
-    public var leadingSilhouetteVariant: Int = 0
-    public var trailingSilhouetteVariant: Int = 0
-    public var leadingForegroundPlantVariant: Int = 0
-    public var trailingForegroundPlantVariant: Int = 0
+    public var floorVariant: Int
+    public var fountainVariant: Int
+    public var leadingSilhouetteVariant: Int
+    public var trailingSilhouetteVariant: Int
+    public var leadingForegroundPlantVariant: Int
+    public var trailingForegroundPlantVariant: Int
     
     public var currentVisitorEvent: BackyardVisitorEvent? {
         guard let event = visitorEvents.first(where: { $0.dateRange.contains(.now) }) else {
@@ -65,6 +65,15 @@ import SwiftData
         self.creationDate = .now
         self.waterRefillDate = .now
         self.foodRefillDate = .now
+        self.presentingVisitor = false
+        self.isFavorite = false
+        self.timeIntervalOffset = TimeInterval(hours: 12)
+        self.floorVariant = 0
+        self.fountainVariant = 0
+        self.leadingSilhouetteVariant = 0
+        self.trailingSilhouetteVariant = 0
+        self.leadingForegroundPlantVariant = 0
+        self.trailingForegroundPlantVariant = 0
     }
     
     public func expectedEmptyDate(for supplies: BackyardSupplies) -> Date {

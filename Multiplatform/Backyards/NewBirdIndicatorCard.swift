@@ -12,7 +12,7 @@ import BackyardBirdsData
 import LayeredArtworkLibrary
 
 struct NewBirdIndicatorCard: View {
-    @Query(sort: \.creationDate)
+    @Query(sort: \Backyard.creationDate)
     private var backyards: [Backyard]
     
     var body: some View {

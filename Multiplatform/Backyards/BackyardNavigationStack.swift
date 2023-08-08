@@ -11,7 +11,7 @@ import BackyardBirdsUI
 import BackyardBirdsData
 
 struct BackyardNavigationStack: View {
-    @Query(sort: \.creationDate)
+    @Query(sort: \Backyard.creationDate)
     private var backyards: [Backyard]
     
     var body: some View {

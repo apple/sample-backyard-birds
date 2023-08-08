@@ -69,7 +69,7 @@ private let tagValue = BirdTag.premiumGoldenHummingbird.rawValue
 private struct PassMarketingContent: View {
     var showPremiumUpgrade: Bool = false
     
-    @Query(filter: #Predicate { $0.tag == tagValue })
+    @Query(filter: #Predicate<Bird> { $0.tag == tagValue })
     private var birds: [Bird]
     
     init(showPremiumUpgrade: Bool) {

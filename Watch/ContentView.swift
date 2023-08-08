@@ -12,7 +12,7 @@ import BackyardBirdsData
 import BackyardBirdsUI
 
 struct ContentView: View {
-    @Query(sort: \.creationDate)
+    @Query(sort: \Backyard.creationDate)
     private var backyards: [Backyard]
     
     @Environment(\.passStatus) private var passStatus

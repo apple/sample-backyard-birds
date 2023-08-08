@@ -25,7 +25,7 @@ struct BackyardBirdsPassOfferCard: View {
 private let tagValue = BirdTag.premiumGoldenHummingbird.rawValue
 
 struct BirdDecoration: View {
-    @Query(filter: #Predicate { $0.tag == tagValue })
+    @Query(filter: #Predicate<Bird> { $0.tag == tagValue })
     private var birds: [Bird]
 
     var body: some View {

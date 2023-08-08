@@ -14,6 +14,7 @@ struct BackyardsSearchSuggestions: View {
     
     var events: [BackyardVisitorEvent] {
         Set(backyards.compactMap(\.currentVisitorEvent))
+            .sorted { $0.backyard.name < $1.backyard.name }
             .sorted { $0.bird.speciesName < $1.bird.speciesName }
     }
     

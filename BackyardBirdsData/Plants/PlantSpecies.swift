@@ -12,7 +12,7 @@ import SwiftData
     @Attribute(.unique) public var id: String
     public var parts: [PlantPart]
     
-    @Relationship(.cascade, inverse: \Plant.species)
+    @Relationship(deleteRule: .cascade, inverse: \Plant.species)
     public var plants: [Plant]
     
     public var info: PlantSpeciesInfo {

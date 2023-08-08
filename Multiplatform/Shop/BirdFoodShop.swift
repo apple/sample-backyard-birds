@@ -13,7 +13,7 @@ import BackyardBirdsData
 import BackyardBirdsUI
 
 struct BirdFoodShop: View {
-    @Query(sort: [.init(\.name, comparator: .localizedStandard)])
+    @Query(sort: [.init(\BirdFood.name, comparator: .localizedStandard)])
     private var allBirdFood: [BirdFood]
     
     @Environment(\.dismiss) private var dismiss

@@ -11,7 +11,7 @@ import StoreKit
 import BackyardBirdsData
 
 public struct BackyardList: View {
-    @Query(sort: [.init(\.creationDate)])
+    @Query(sort: \Backyard.creationDate)
     private var backyards: [Backyard]
     
     @Environment(\.passIDs.group) private var passGroupID
