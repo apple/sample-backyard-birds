@@ -45,7 +45,7 @@ option ensures that the `id` property is unique.
     public var parts: [BirdPart]
     
     @Relationship(deleteRule: .cascade, inverse: \Bird.species)
-    public var birds: [Bird]
+    public var birds: [Bird] = []
     
     public var info: BirdSpeciesInfo { BirdSpeciesInfo(rawValue: id) }
     

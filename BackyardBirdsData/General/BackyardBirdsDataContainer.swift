@@ -12,7 +12,7 @@ struct BackyardBirdsDataContainerViewModifier: ViewModifier {
     let container: ModelContainer
     
     init(inMemory: Bool) {
-        container = try! ModelContainer(for: DataGeneration.schema, configurations: [ModelConfiguration(inMemory: inMemory)])
+        container = try! ModelContainer(for: DataGeneration.schema, configurations: [ModelConfiguration(isStoredInMemoryOnly: inMemory)])
     }
     
     func body(content: Content) -> some View {

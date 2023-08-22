@@ -18,14 +18,14 @@ import SwiftData
     public var presentingVisitor: Bool
     public var isFavorite: Bool
     public var timeIntervalOffset: TimeInterval
-    public var birdFood: BirdFood
-    public var visitorEvents: [BackyardVisitorEvent]
+    public var birdFood: BirdFood?
+    public var visitorEvents: [BackyardVisitorEvent] = []
     
     @Relationship(inverse: \Plant.backyard)
-    public var leadingPlants: [Plant]
+    public var leadingPlants: [Plant] = []
     
     @Relationship(inverse: \Plant.backyard)
-    public var trailingPlants: [Plant]
+    public var trailingPlants: [Plant] = []
     
     public var floorVariant: Int
     public var fountainVariant: Int

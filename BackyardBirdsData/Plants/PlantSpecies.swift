@@ -13,7 +13,7 @@ import SwiftData
     public var parts: [PlantPart]
     
     @Relationship(deleteRule: .cascade, inverse: \Plant.species)
-    public var plants: [Plant]
+    public var plants: [Plant] = []
     
     public var info: PlantSpeciesInfo {
         PlantSpeciesInfo(rawValue: id)

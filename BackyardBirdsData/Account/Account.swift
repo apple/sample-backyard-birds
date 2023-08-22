@@ -15,7 +15,7 @@ private let logger = Logger(subsystem: "BackyardBirdsData", category: "Account")
 @Model public class Account {
     
     @Attribute(.unique) public var id: String
-    public var bird: Bird!
+    public var bird: Bird?
     public var joinDate: Date
     public var displayName: String
     public var emailAddress: String

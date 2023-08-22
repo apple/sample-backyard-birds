@@ -18,7 +18,7 @@ extension BackyardVisitorEvent {
         logger.info("Generating historical visitor events")
         let birds = try! modelContext.fetch(FetchDescriptor<Bird>(sortBy: [.init(\.creationDate)]))
             .shuffled(using: &random)
-            .filter { includeEarlyAccessSpecies || !$0.species.isEarlyAccess }
+            .filter { includeEarlyAccessSpecies || !($0.species?.isEarlyAccess ?? false) }
         let backyards = try! modelContext.fetch(FetchDescriptor<Backyard>(sortBy: [.init(\.creationDate)]))
         
         for minutesAgo in stride(from: 5, through: 300, by: 40) {
@@ -45,9 +45,9 @@ extension BackyardVisitorEvent {
         
         logger.info("Generating current events")
         let allBirds = try! modelContext.fetch(FetchDescriptor<Bird>(sortBy: [.init(\.creationDate)]))
-            .filter { includeEarlyAccessSpecies || !$0.species.isEarlyAccess }
+            .filter { includeEarlyAccessSpecies || !($0.species?.isEarlyAccess ?? false) }
         let birds = allBirds.shuffled(using: &random)
-        let firstHummingbird = allBirds.first(where: { $0.species.info == .hummingbird })!
+        let firstHummingbird = allBirds.first(where: { ($0.species?.info ?? .dove) == .hummingbird })!
         let backyards = try! modelContext.fetch(FetchDescriptor<Backyard>(sortBy: [.init(\.creationDate)]))
         let firstBackyard = backyards.first!
         
@@ -88,7 +88,7 @@ extension BackyardVisitorEvent {
         logger.info("Generating future events")
         let birds = try! modelContext.fetch(FetchDescriptor<Bird>(sortBy: [.init(\.creationDate)]))
             .shuffled(using: &random)
-            .filter { includeEarlyAccessSpecies || !$0.species.isEarlyAccess }
+            .filter { includeEarlyAccessSpecies || !($0.species?.isEarlyAccess ?? false) }
         let backyards = try! modelContext.fetch(FetchDescriptor<Backyard>(sortBy: [.init(\.creationDate)]))
         
         let earliestDate = Date.now.addingTimeInterval(DataGenerationOptions.currentBirdsVisitingDuration)

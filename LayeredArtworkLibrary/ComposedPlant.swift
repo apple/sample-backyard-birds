@@ -17,16 +17,24 @@ public struct ComposedPlant: View {
     
     public var body: some View {
         ZStack {
-            ForEach(plant.species.parts) { part in
-                Image(imageName(for: part), bundle: .module)
-                    .resizable()
-                    .scaledToFit()
+            if let species = plant.species {
+                ForEach(species.parts) { part in
+                    if let imageName = imageName(for: part) {
+                        Image(imageName, bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                    } else {
+                        Image(systemName: "questionmark")
+                    }
+                }
             }
         }
     }
     
-    func imageName(for part: PlantPart) -> String {
-        var result = "\(plant.species.id)/\(part.name)"
+    func imageName(for part: PlantPart) -> String? {
+        guard let species = plant.species else { return nil }
+        
+        var result = "\(species.id)/\(part.name)"
         if part.variants != nil {
             result.append(" \(plant.variant + 1)")
         }

@@ -33,7 +33,7 @@ struct BackyardSupplyIndicator: View {
                 VStack(alignment: .leading) {
                     switch supplies {
                     case .food:
-                        Text(backyard.birdFood.name)
+                        Text(backyard.birdFood?.name ?? "- Food name is missing. -")
                     case .water:
                         Text("Water", comment: "Shown in the context of food supplies in a given backyard")
                     }

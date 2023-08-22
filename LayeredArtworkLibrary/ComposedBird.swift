@@ -19,18 +19,20 @@ public struct ComposedBird: View {
     
     public var body: some View {
         ZStack {
-            ForEach(bird.species.parts) { part in
-                if part.flipbookFrameCount != nil {
-                    let i = 0
-                    Image("\(bird.species.id)/\(part.name)\(i + 1)", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .colorMultiply(bird.colors.colorData(for: part.colorStyle).color)
-                } else {
-                    Image("\(bird.species.id)/\(part.name)", bundle: .module)
-                        .resizable()
-                        .scaledToFit()
-                        .colorMultiply(bird.colors.colorData(for: part.colorStyle).color)
+            if let species = bird.species {
+                ForEach(species.parts) { part in
+                    if part.flipbookFrameCount != nil {
+                        let i = 0
+                        Image("\(species.id)/\(part.name)\(i + 1)", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .colorMultiply(bird.colors.colorData(for: part.colorStyle).color)
+                    } else {
+                        Image("\(species.id)/\(part.name)", bundle: .module)
+                            .resizable()
+                            .scaledToFit()
+                            .colorMultiply(bird.colors.colorData(for: part.colorStyle).color)
+                    }
                 }
             }
         }

@@ -48,7 +48,7 @@ public struct BackyardViewport: View {
     }
     
     public var body: some View {
-        BackyardViewportLayout(birdNaturalScale: bird?.species.naturalScale ?? 1) {
+        BackyardViewportLayout(birdNaturalScale: bird?.species?.naturalScale ?? 1) {
             HStack {
                 SilhouetteArtwork(variant: backyard.leadingSilhouetteVariant)
                     .colorMultiply(backyard.colorData.silhouette.color)

@@ -12,9 +12,8 @@ import SwiftData
 import BackyardBirdsData
 
 /// Business logic for in-app purchase
-actor BirdBrain: ModelActor {
-    let executor: any ModelExecutor
-    
+@ModelActor
+actor BirdBrain {
     private let logger = Logger(
         subsystem: "Backyard Birds",
         category: "Bird Brain"
@@ -22,14 +21,10 @@ actor BirdBrain: ModelActor {
     
     private var updatesTask: Task<Void, Never>?
     
-    private init(executor: DefaultModelExecutor) {
-        self.executor = executor
-    }
-    
     private(set) static var shared: BirdBrain!
     
     static func createSharedInstance(modelContext: ModelContext) {
-        shared = BirdBrain(executor: DefaultModelExecutor(context: modelContext))
+        shared = BirdBrain(modelContainer: modelContext.container)
     }
     
     func process(transaction verificationResult: VerificationResult<Transaction>) async {
@@ -122,7 +117,7 @@ actor BirdBrain: ModelActor {
         }
         
         do {
-            try executor.context.save()
+            try modelContext.save()
         } catch {
             logger.error("Could not save model context: \(error.localizedDescription)")
         }
@@ -196,7 +191,7 @@ actor BirdBrain: ModelActor {
     }
     
     private func birdFood(for productID: Product.ID) -> (BirdFood, BirdFood.Product)? {
-        try? executor.context.fetch(FetchDescriptor<BirdFood>()).birdFood(for: productID)
+        try? modelContext.fetch(FetchDescriptor<BirdFood>()).birdFood(for: productID)
     }
     
 }

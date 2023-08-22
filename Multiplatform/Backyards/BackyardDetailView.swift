@@ -23,7 +23,7 @@ struct BackyardDetailView: View {
                 .overlay(alignment: .bottom) {
                     if let bird = backyard.currentVisitorEvent?.bird {
                         if presentingHappinessIndicator {
-                            BirdFoodHappinessIndicator(birdName: bird.speciesName, foodName: backyard.birdFood.name)
+                            BirdFoodHappinessIndicator(birdName: bird.speciesName, foodName: backyard.birdFood?.name ?? "")
                         }
                     }
                 }

@@ -14,12 +14,12 @@ private let logger = Logger(subsystem: "Backyard Birds Data", category: "Plant")
 @Model public class Plant {
     @Attribute(.unique) public var id: String
     public var creationDate: Date
-    public var species: PlantSpecies!
+    public var species: PlantSpecies?
     public var backyard: Backyard?
     public var variant: Int
     
-    public var speciesName: String { species.info.name }
-    public var speciesSummary: String { species.info.summary }
+    public var speciesName: String { species?.info.name ?? "- Plant species name is missing. -" }
+    public var speciesSummary: String { species?.info.summary ?? "- Plant species summary is missing. -" }
     
     public init(id: UUID = UUID(), variant: Int) {
         self.id = id.uuidString

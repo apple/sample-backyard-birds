@@ -34,13 +34,14 @@ struct BackyardSearchSuggestion: Hashable, Identifiable {
     
     init?(visitor: BackyardVisitorEvent, backyards: [Backyard]) {
         guard let backyard = backyards.first else { return nil }
+        guard let bird = visitor.bird else { return nil }
         
-        bird = visitor.bird
+        self.bird = bird
         self.backyards = backyards
         if visitor.endDate < .now {
-            visitorStatus = .previous(visitor.bird, backyards)
+            visitorStatus = .previous(bird, backyards)
         } else {
-            visitorStatus = .current(visitor.bird, backyard)
+            visitorStatus = .current(bird, backyard)
         }
     }
 }

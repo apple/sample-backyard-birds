@@ -29,10 +29,10 @@ struct AccountNavigationStack: View {
     
     var body: some View {
         NavigationStack {
-            if let account = accounts.first {
+            if let account = accounts.first, let bird = accounts.first?.bird {
                 Form {
                     VStack {
-                        BirdIcon(bird: account.bird)
+                        BirdIcon(bird: bird)
                             .frame(width: 80, height: 80)
                         
                         Text(account.displayName)

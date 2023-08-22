@@ -14,15 +14,16 @@ struct BackyardsSearchSuggestions: View {
     
     var events: [BackyardVisitorEvent] {
         Set(backyards.compactMap(\.currentVisitorEvent))
-            .sorted { $0.backyard.name < $1.backyard.name }
-            .sorted { $0.bird.speciesName < $1.bird.speciesName }
+            .sorted { ($0.backyard?.name ?? "") < ($1.backyard?.name ?? "") }
+            .sorted { ($0.bird?.speciesName ?? "") < ($1.bird?.speciesName ?? "") }
     }
     
     var body: some View {
         ForEach(events) { event in
-            let backyard = event.backyard.name
-            Text("**\(event.bird.speciesName)** is currently in **\(backyard)**")
-                .searchCompletion(backyard)
+            let backyardName = event.backyard?.name ?? "- Event without a backyard. -"
+            let speciesName = event.bird?.speciesName ?? "- Species name missing. -"
+            Text("**\(speciesName)** is currently in **\(backyardName)**")
+                .searchCompletion(backyardName)
         }
     }
 }
