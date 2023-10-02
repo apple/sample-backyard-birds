@@ -9,7 +9,7 @@ import SwiftUI
 import BackyardBirdsData
 
 private let variants = [
-    "Terracotta", "Stone", "Marble"
+    ImageResource.Fountain.terracotta, .Fountain.stone, .Fountain.marble
 ]
 
 public struct FountainArtwork: View {
@@ -19,12 +19,8 @@ public struct FountainArtwork: View {
         self.variantIndex = variant
     }
     
-    var variant: String {
-        variants[variantIndex]
-    }
-    
     public var body: some View {
-        Image("Fountain/\(variant)", bundle: .module)
+        Image(variants[variantIndex])
             .resizable()
             .scaledToFit()
     }

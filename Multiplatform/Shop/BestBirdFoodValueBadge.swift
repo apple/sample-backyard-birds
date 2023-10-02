@@ -18,7 +18,7 @@ private struct BestBirdFoodValueBadge: View {
             .overlay {
                 Capsule().strokeBorder()
             }
-            .foregroundStyle(.premiumBirdFoodColor)
+            .foregroundStyle(.premiumBirdFood)
             .dynamicTypeSize(...(.xLarge))
             .fixedSize()
             .offset(y: 10.0)

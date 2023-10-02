@@ -9,12 +9,12 @@ import SwiftUI
 
 // MARK: - Colors
 
-public struct Colors {
-    public static let premiumBirdFoodColor = Color("Premium Bird Food", bundle: .module)
+public extension Color {
+    static let premiumBirdFood = Color(.premiumBirdFood)
 }
 
 public extension ShapeStyle where Self == Color {
-    static var premiumBirdFoodColor: Color { Colors.premiumBirdFoodColor }
+    static var premiumBirdFood: Color { .premiumBirdFood }
 }
 
 // MARK: - Styles

@@ -7,15 +7,19 @@ The floor.
 
 import SwiftUI
 
+private let variants = [
+    ImageResource.floor1, .floor2, .floor3, .floor4
+]
+
 public struct FloorArtwork: View {
-    var variant: Int
+    var variantIndex: Int
     
     public init(variant: Int) {
-        self.variant = variant
+        self.variantIndex = variant
     }
     
     public var body: some View {
-        Image("Floor \(variant + 1)", bundle: .module)
+        Image(variants[variantIndex])
             .resizable()
             .scaledToFill()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

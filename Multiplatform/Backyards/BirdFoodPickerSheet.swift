@@ -173,7 +173,7 @@ struct BirdFoodPickerSheet: View {
 
         }
         #if !os(watchOS)
-        .tint(.premiumBirdFoodColor)
+        .tint(.premiumBirdFood)
         .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
         .controlSize(.large)
@@ -250,7 +250,7 @@ struct BirdFoodPickerSheet: View {
                                 .fontWeight(.semibold)
                                 .fontDesign(.rounded)
                                 .frame(minWidth: metrics.cardActionButton.minWidth)
-                                .foregroundStyle(.premiumBirdFoodColor)
+                                .foregroundStyle(.premiumBirdFood)
                                 .background(.foreground, in: .capsule.inset(by: metrics.cardActionButton.backgroundInset))
                         }
                     } else {
@@ -263,7 +263,7 @@ struct BirdFoodPickerSheet: View {
                 .controlSize(metrics.card.controlSize)
                 .buttonStyle(.borderedProminent)
                 .buttonBorderShape(.capsule)
-                .tint(food.isPremium ? .premiumBirdFoodColor : nil)
+                .tint(food.isPremium ? .premiumBirdFood : nil)
             }
             .padding(.horizontal, metrics.card.horizontalPadding)
             .padding(.vertical, metrics.card.verticalPadding)

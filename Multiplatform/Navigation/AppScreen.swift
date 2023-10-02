@@ -23,7 +23,11 @@ extension AppScreen {
     var label: some View {
         switch self {
         case .backyards:
-            Label("Backyards", image: .fountainImage)
+            Label {
+                Text("Backyards")
+            } icon: {
+                Image.fountain
+            }
         case .birds:
             Label("Birds", systemImage: "bird")
         case .plants:

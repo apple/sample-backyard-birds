@@ -21,7 +21,7 @@ struct BirdFoodQuantityBadge: View {
             .padding(.vertical, 2 * scale)
             .padding(.horizontal, 4 * scale)
             .frame(minWidth: metrics.badgeQuantityMinWidth * scale)
-            .background(.premiumBirdFoodColor, in: .capsule)
+            .background(.premiumBirdFood, in: .capsule)
     }
 }
 

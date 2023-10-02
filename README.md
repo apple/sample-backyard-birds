@@ -32,9 +32,9 @@ To configure the Backyard Birds app to run on your devices, follow these steps:
 ## Create a data-driven app
 
 The app defines its data model by conforming the model objects to [`PersistentModel`](https://developer.apple.com/documentation/swiftdata/persistentmodel) 
-using the [`Model`](https://developer.apple.com/documentation/swiftdata/model) macro. 
-Using the [`Attribute`](https://developer.apple.com/documentation/swiftdata/attribute(_:renamingidentifier:hashmodifier:)) macro 
-with the [`unique`](https://developer.apple.com/documentation/swiftdata/propertyoptions/unique) 
+using the [`Model`](https://developer.apple.com/documentation/swiftdata/model()) macro. 
+Using the [`Attribute`](https://developer.apple.com/documentation/swiftdata/attribute(_:originalName:hashModifier:)) macro 
+with the [`unique`](https://developer.apple.com/documentation/swiftdata/schema/attribute/option/unique) 
 option ensures that the `id` property is unique.
 
 ``` swift

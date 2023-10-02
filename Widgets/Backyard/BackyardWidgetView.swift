@@ -62,7 +62,7 @@ struct BackyardSnapshotWidgetView: View {
     @ViewBuilder
     var header: some View {
         HStack(spacing: 4) {
-            Image(.fountainFillImage)
+            Image.fountainFill
             Text(snapshot.backyard.name)
             Spacer()
             snapshot.timeOfDay.view

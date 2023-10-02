@@ -2,12 +2,12 @@
 See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
-A convenience extension to `ImageResource`.
+A convenience extension to `Image`.
 */
 
 import SwiftUI
 
-public extension ImageResource {
-    static let fountainImage = ImageResource(name: "fountain", bundle: .module)
-    static let fountainFillImage = ImageResource(name: "fountain.fill", bundle: .module)
+public extension Image {
+    static let fountain = Image(.fountain)
+    static let fountainFill = Image(.fountainFill)
 }
