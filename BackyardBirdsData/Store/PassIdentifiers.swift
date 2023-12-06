@@ -7,7 +7,7 @@ Identifiers for use in the store.
 
 import SwiftUI
 
-public struct PassIdentifiers {
+public struct PassIdentifiers: Sendable {
     public var group: String
     
     public var individual: String

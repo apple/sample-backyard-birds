@@ -97,7 +97,7 @@ private struct PassStatusTaskModifier: ViewModifier {
             .subscriptionStatusTask(for: passIDs.group) { state in
                 logger.info("Checking subscription status")
                 guard let birdBrain = BirdBrain.shared else { fatalError("BirdBrain was nil.") }
-                self.state = await state.map { statuses in
+                self.state = await state.map { @Sendable [passIDs] statuses in
                     await birdBrain.status(
                         for: statuses,
                         ids: passIDs
